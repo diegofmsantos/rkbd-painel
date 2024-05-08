@@ -26,14 +26,23 @@ const Page = () => {
             <div className="h-28 flex justify-around items-center">
                 <Filter />
                 <div className="flex justify-center items-center gap-7">
-                    <ArrowDownTrayIcon className="w-14 h-14 bg-[#C1C1C1] p-1 rounded-md" />
-                    <TrashIcon className="w-14 h-14 bg-[#C1C1C1] p-1 rounded-md" />
-                    <TableCellsIcon className="w-14 h-14 bg-[#C1C1C1] p-1 rounded-md" />
+                    <button className="bg-[#C1C1C1] w-20 flex flex-col justify-center items-center p-1 rounded-md text-xs font-bold">
+                        <ArrowDownTrayIcon className="w-9 h-9" />
+                        Salvar
+                    </button>
+                    <button className="bg-[#C1C1C1] w-20 flex flex-col justify-center items-center p-1 rounded-md text-xs font-bold">
+                        <TrashIcon className="w-9 h-9" />
+                        Limpar
+                    </button>
+                    <button className="bg-[#C1C1C1] w-20 flex flex-col justify-center items-center p-1 rounded-md text-xs font-bold">
+                        <TableCellsIcon className="w-9 h-9" />
+                        Armazenar
+                    </button>
                 </div>
             </div>
             <div className="grid grid-cols-6 gap-6 m-auto">
                 {times.map(time => (
-                    <div className="flex items-center gap-4">
+                    <div key={time.id} className="flex items-center gap-4">
                         <div>
                             <Image src={`/assets/logos-times/${time.url}`} width={30} height={30} alt="Logo" />
                         </div>
@@ -41,7 +50,11 @@ const Page = () => {
                     </div>
                 ))}
             </div>
-            <Link href="/" className="border border-gray-300 m-auto w-32 p-1 rounded-md text-center font-bold">Voltar</Link>
+            <Link
+                href="/"
+                className="border border-gray-300 m-auto w-32 p-1 rounded-md text-center font-bold hover:bg-[#C1C1C1]">
+                Voltar
+            </Link>
         </div>
     )
 }
