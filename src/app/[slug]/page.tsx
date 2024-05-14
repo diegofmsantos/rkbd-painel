@@ -4,6 +4,7 @@ import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
 import { ArrowDownTrayIcon, TableCellsIcon } from "@heroicons/react/16/solid";
 import Image from "next/image"
+import Link from "next/link";
 
 type Props = {
     params: {
@@ -27,11 +28,26 @@ const Page = ({ params }: Props) => {
                     </div>
                 </div>
                 <form className="flex flex-col gap-4">
-                    <Input placeholder="instagram" />
-                    <Input placeholder="twitter" />
-                    <Input placeholder="facebook" />
-                    <Input placeholder="youtube" />
-                    <Input placeholder="tiktok" />
+                    <div className="flex justify-end gap-2">
+                        <span className="hidden">Instagram:</span>
+                        <Input placeholder="instagram" />
+                    </div>
+                    <div className="flex justify-end gap-2">
+                        <span className="hidden">Twitter:</span>
+                        <Input placeholder="twitter" />
+                    </div>
+                    <div className="flex justify-end gap-2">
+                        <span className="hidden">Facebook:</span>
+                        <Input placeholder="facebook" />
+                    </div>
+                    <div className="flex justify-end gap-2">
+                        <span className="hidden">Youtube:</span>
+                        <Input placeholder="youtube" />
+                    </div>
+                    <div className="flex justify-end gap-2">
+                        <span className="hidden">TikTok:</span>
+                        <Input placeholder="tiktok" />
+                    </div>
                 </form>
                 <div className="flex flex-col items-center gap-4">
                     <div className="flex justify-center items-center gap-7">
@@ -41,13 +57,14 @@ const Page = ({ params }: Props) => {
                         </Button>
                         <Button>
                             <TableCellsIcon className="w-9 h-9" />
-                            Armazenar
+                            Cadastrar
                         </Button>
                     </div>
-                    <button
-                        className="bg-[#C1C1C1] w-44 mt-6 flex flex-col justify-center items-center p-1 rounded-md text-md font-bold hover:bg-[#16C6D1]">
+                    <Link
+                        href={`/`}
+                        className="bg-[#C1C1C1] w-44 mt-6 flex flex-col justify-center items-center p-1 rounded-md text-md font-bold duration-500 hover:bg-[#16C6D1]">
                         Voltar
-                    </button>
+                    </Link>
                 </div>
             </div>
 
